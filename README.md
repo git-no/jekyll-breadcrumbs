@@ -7,7 +7,7 @@ Supports [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-pl
 Comes also with code examples for design and footer integration and support of Twitter Bootstrap - also no problem without Twitter Bootstrap (probably you just have to add some additional CSS code but can use the integrated HTML template).
 
 
-[![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/breadcrumb-example.png)
+[![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)
 
 #### Requirements
 * Jekyll 3.0
