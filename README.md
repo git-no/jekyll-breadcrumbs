@@ -25,7 +25,7 @@ Jekyll 3.0 breadcrumbs for posts, pages, collections with optional support of i1
 
 ## Installation
 
-1. Download this repository zip file and unpack the zip-file.
+1. Download the latest [release](https://github.com/git-no/jekyll-breadcrumbs/releases) and unpack the file.
 - Copy the content of *_plugin* folder to your Jekyll repository *_plugin* folder.
 - Copy *nav-breadcrumb.html* into your Jekyll repository *_include* folder.
 
