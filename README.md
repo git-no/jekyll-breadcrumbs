@@ -59,8 +59,7 @@ Change the line in nav-breadcrumbs.html
 For an image as root icon in breadcrumbs you probably have to update your css.
 
 ## Known Issues
-* full URL in breadcumbs if productive
-* CSS without Twitter Bootstrap missing (feel free to contribute)
+* CSS without Twitter Bootstrap missing (feel free to contribute and develop CSS)
 * Breadcrumbs are not translated in combination with [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).
 
 ## Contribution
