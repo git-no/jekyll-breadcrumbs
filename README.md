@@ -1,23 +1,24 @@
 # jekyll-breadcrumbs
 Jekyll 3.0 breadcrumbs for posts, pages, collections with optional support of i18n and Twitter Bootstrap.
 
+![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)
+
 ## Overview
 * Smart and fast breadcrumbs for posts, pages and collections.  
 * Supports [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).   
-* Comes also with a code example for design and footer integration and wiht support of Twitter Bootstrap - has also no problem without Twitter Bootstrap (probably you just have to add some additional CSS code but can use the integrated HTML template).
-
-![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)
+* Comes also with a code example for design and footer integration and with support of Twitter Bootstrap - has also no problem without Twitter Bootstrap (probably you just have to add some additional CSS code but you still can use the integrated HTML template).
 
 ### Features
 
-- Works with posts, pages and collections!
-- Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks), does not require an additional Ruby GEM.
-- Works with pretty permalinks.
-- HTML5 compliant and includes a HTML template as include file.
+- Works with posts, pages and collections.
+- HTML5 compliant and includes a HTML template for quick integration.
+- SEO improved, implements [Googles RDFA format](https://developers.google.com/structured-data/breadcrumbs).
+- Works with Pretty Permalinks.
 - Breadcrumb title can differ from page title.
 - Hides breadcrumbs at root page.
 - Skips language breadcrumb ```page.language``` if [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) is in use.
-- Icon for root level
+- Icon for root level.
+- Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks), does not require an additional Ruby GEM.
 
 #### Requirements
 * Jekyll 3.0
@@ -48,16 +49,18 @@ Jekyll 3.0 breadcrumbs for posts, pages, collections with optional support of i1
 * Integrated the included SCSS file or create your own CSS.
 * Integrate your icon as SVG or as Image. This example works with SVG simular with the *_include/icon-github.html* and *_include/icon-github.svg*.
 Change the line in nav-breadcrumbs.html
-```
-    <li class="breadcrumb-item">{% include icon.html %}</li>
-```
-to your icon.html file name or change it to use an image to
-```
-    <li class="breadcrumb-item"><img src="/your-image-path" alt="icon"></li>
-```
+  ```
+      <li class="breadcrumb-item">{% include icon.html %}</li>
+  ```
+  to your icon.html file name or change it to use an image to
+  ```
+      <li class="breadcrumb-item"><img src="/your-image-path" alt="icon"></li>
+  ```
 For an image as root icon in breadcrumbs you probably have to update your css.
 
 ## Known Issues
+* full URL in breadcumbs if productive
+* CSS without Twitter Bootstrap missing (feel free to contribute)
 * Breadcrumbs are not translated in combination with [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).
 
 ## Contribution
