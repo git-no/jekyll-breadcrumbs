@@ -45,16 +45,16 @@ Jekyll 3.0 breadcrumbs for posts, pages, collections with optional support of i1
   breadcrumb: Legal
   ---
   ```  
-
 * Integrated the included SCSS file or create your own CSS.
 * Integrate your icon as SVG or as Image. This example works with SVG simular with the *_include/icon-github.html* and *_include/icon-github.svg*.
 Change the line in nav-breadcrumbs.html
+
   ```
-      <li class="breadcrumb-item">{% include icon.html %}</li>
+  <li class="breadcrumb-item">{% include icon.html %}</li>
   ```
   to your icon.html file name or change it to use an image to
   ```
-      <li class="breadcrumb-item"><img src="/your-image-path" alt="icon"></li>
+  <li class="breadcrumb-item"><img src="/your-image-path" alt="icon"></li>
   ```
 For an image as root icon in breadcrumbs you probably have to update your css.
 
