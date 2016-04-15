@@ -1,9 +1,10 @@
 # jekyll-breadcrumbs
-Jekyll 3.0 Breadcrumbs for posts, pages, collections and optional support of i18n and Twitter Bootstrap.
+Jekyll 3.0 breadcrumbs for posts, pages, collections with optional support of i18n and Twitter Bootstrap.
 
 ## Overview
 Smart and fast breadcrumbs for posts, pages and collections.  
-Comes also with code examples for design and footer integration.
+Supports [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).   
+Comes also with code examples for design and footer integration and support of Twitter Bootstrap - also no problem without Twitter Bootstrap (probably you just have to add some additional CSS code but can use the integrated HTML template).
 
 
 [![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/breadcrumb-example.png)
@@ -24,7 +25,7 @@ Comes also with code examples for design and footer integration.
 
 ## Installation
 
-1. Download this repository zip file and unpack zip-file.
+1. Download this repository zip file and unpack the zip-file.
 - Copy the content of *_plugin* folder to your Jekyll repository *_plugin* folder.
 - Copy *nav-breadcrumb.html* into your Jekyll repository *_include* folder.
 
@@ -56,6 +57,9 @@ to your icon.html file name or change it to use an image to
     <li class="breadcrumb-item"><img src="/your-image-path" alt="icon"></li>
 ```
 For an image as root icon in breadcrumbs you probably have to update your css.
+
+## Known Issues
+* Breadcrumbs are not translated in combination with [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).
 
 ## Contribution
 This Jekyll plugin is an extension of the [Simple Breadcrumbs in Jekyll 3](https://envygeeks.io/2015/12/06/super-simple-breadcrumbs-in-jekyll-3-0/) from the [envygeeks](https://github.com/envygeeks). Thank you very much [envygeeks](https://github.com/envygeeks) for all the effort and Jekyll development. We love Jekyll.
