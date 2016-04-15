@@ -1,0 +1,22 @@
+// Has Twitter Bootstrap class names
+$font-size-breadcrumbs: 0.7rem; // or change it into a pixel value of your choice
+$bg-color-breadcrumbs: #f1f2ed;
+
+.breadcrumbs {
+  padding-top: 20px;
+
+  ol.breadcrumb {
+    margin-bottom: 0;
+    padding-left: 0;
+    background-color: $bg-color-breadcrumbs;
+  }
+
+  .breadcrumb-item {
+    font-size: $font-size-breadcrumb;
+  }
+
+  .icon svg {
+    height: 1rem;
+    width: 1rem;
+  }
+}

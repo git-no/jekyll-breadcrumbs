@@ -1,0 +1,22 @@
+<nav class="breadcrumbs hidden-sm-down">
+  <ol class="breadcrumb">
+  {% for crumb in breadcrumbs %}
+
+    {% if crumb.url == "/" %}
+    <li class="breadcrumb-item">{% include icon.html %}</li>
+    {% continue %}
+    {% endif %}
+
+    {% if page.language %}
+      {% assign lang-permalink = crumb.url | remove: "/" %}
+      {% if page.language == lang-permalink %}
+      {% continue %}
+      {% endif %}
+    {% endif %}
+
+    {% assign title = crumb.title %}
+    <li class="breadcrumb-item{% if crumb.url == page.url %} active{% endif %}">{% if crumb.url != page.url %}<a href="{{ crumb.url | prepend:site.baseurl }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</li>
+
+  {% endfor %}
+  </ol>
+</nav>
