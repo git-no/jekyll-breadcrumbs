@@ -2,15 +2,11 @@
 Jekyll 3.0 breadcrumbs for posts, pages, collections with optional support of i18n and Twitter Bootstrap.
 
 ## Overview
-Smart and fast breadcrumbs for posts, pages and collections.  
-Supports [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).   
-Comes also with code examples for design and footer integration and support of Twitter Bootstrap - also no problem without Twitter Bootstrap (probably you just have to add some additional CSS code but can use the integrated HTML template).
+* Smart and fast breadcrumbs for posts, pages and collections.  
+* Supports [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).   
+* Comes also with a code example for design and footer integration and wiht support of Twitter Bootstrap - has also no problem without Twitter Bootstrap (probably you just have to add some additional CSS code but can use the integrated HTML template).
 
-
-[![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)
-
-#### Requirements
-* Jekyll 3.0
+![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)
 
 ### Features
 
@@ -22,6 +18,9 @@ Comes also with code examples for design and footer integration and support of T
 - Hides breadcrumbs at root page.
 - Skips language breadcrumb ```page.language``` if [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) is in use.
 - Icon for root level
+
+#### Requirements
+* Jekyll 3.0
 
 ## Installation
 
