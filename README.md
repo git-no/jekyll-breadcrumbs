@@ -1,5 +1,5 @@
 # jekyll-breadcrumbs
-Jekyll 3.0 breadcrumbs for posts, pages, collections with optional support of i18n and Twitter Bootstrap.
+[Jekyll](https://jekyllrb.com) 3.0 breadcrumbs for posts, pages, collections with optional support of i18n and Twitter Bootstrap.
 
 ![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)
 
