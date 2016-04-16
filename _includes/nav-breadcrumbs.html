@@ -1,12 +1,11 @@
-{% assign position = 0 %}
+{% capture url %}{{ page.url | remove: "/" | remove: page.language }}{% endcapture %}
+{% if url.size > 0 %}
 <nav class="breadcrumbs hidden-sm-down">
 
-  {% assign lastcrumb = breadcrumbs | last %}
-  {% if lastcrumb.url != "/" %}
-    {% include icon.html class="breadcrumb-item" %}
-  {% endif %}
+  {% include icon.html class="breadcrumb-item" %}
 
   <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+  {% assign position = 0 %}
   {% for crumb in breadcrumbs %}
 
     {% if crumb.url == "/" %}
@@ -32,3 +31,4 @@
   </ol>
 
 </nav>
+{% endif %}
