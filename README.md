@@ -31,6 +31,7 @@
 
 ### Configuration
 1. No entry in *_config.yml* required.
+* Include the nav-breadcrumb.html where every you want to place the breadcrumbs, e.g. within the footer ``` {% include nav-breadcrumb.html %} ```
 * Use YAML *title* or *breadcrumb* to define breadcrumb title (title is default)
 
   ```
