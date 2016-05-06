@@ -45,8 +45,7 @@
   breadcrumb: Legal
   ---
   ```  
-* If you use [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) jekyll-breadcrumbs will translate each breadcrumb item if YAML *subset* in the page is set. If so this plugin will seek at first for *breadcrumb* within the subset of the language file, if breadcrumb is not found in the langauge file it will look for title within the subset.
-* Integrated the included SCSS file or create your own CSS.
+* Integrate the .scss file or create your own CSS stylesheet to format the breadcrumbs.
 * Integrate your icon as SVG or as Image. This example works with SVG simular with the *_include/icon-github.html* and *_include/icon-github.svg*.
 Change the line in nav-breadcrumbs.html
 
@@ -59,6 +58,9 @@ Change the line in nav-breadcrumbs.html
   ```
 For an image as root icon in breadcrumbs you probably have to update your css.
 * Done. No entry in *_config.yml* required.
+
+## Note
+* If you use [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) jekyll-breadcrumbs will translate each breadcrumb item if YAML *subset* in the page is set. If so this plugin will seek at first for *breadcrumb* within the subset of the language file, if breadcrumb is not found in the langauge file it will look for title within the subset.
 
 ## Known Issues
 * CSS without Twitter Bootstrap missing (feel free to contribute and develop CSS)
