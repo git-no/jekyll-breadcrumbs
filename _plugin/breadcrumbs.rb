@@ -17,7 +17,6 @@ Jekyll::Hooks.register :pages, :pre_render do |page, payload|
   end
 end
 
-
 Jekyll::Hooks.register :documents, :pre_render do |documents, payload|
   drop = Drops::BreadcrumbItem
 
