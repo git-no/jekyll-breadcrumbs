@@ -22,12 +22,7 @@
       {% endif %}
 
       {% assign position = position  | plus: 1 %}
-      {% if page.subset %}
-        {% capture caption %}{% tif %}{% endcapture %}
-      {% else %}
-        {% assign caption = crumb.title %}
-      {% endif %}
-
+      {% assign subset = crumb.subset %}{% if subset %}{% capture caption %}{% tif subset %}{% endcapture %}{% else %}{% assign caption = crumb.title %}{% endif %}
       <li class="breadcrumb-item{% if crumb.url == page.url %} active{% endif %}" property="itemListElement" typeof="ListItem">
         {% if crumb.url != page.url %}<a property="item" typeof="WebPage" href="{{ crumb.url | prepend:site.baseurl }}">{% endif %}
         <span property="name">{{ caption }}</span>

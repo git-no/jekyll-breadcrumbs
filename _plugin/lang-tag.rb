@@ -6,13 +6,16 @@ module Jekyll
       class LanguageIfTag < Liquid::Tag
         def initialize(tag_name, markup, tokens)
           super
+          @markup = markup
         end
 
         def render(context)
-          language = context.registers[:page]['language']
-          subset = context.registers[:page]['subset']
+          p = Liquid::Parser.new(@markup)
+          name = Liquid::Expression.parse(exp = p.expression)
+          subset = context.evaluate(name)
           exp = subset + ".breadcrumb"
 
+          language = context.registers[:page]['language']
           language_data = Jekyll::LanguagePlugin::LiquidContext.get_language_data(context)
           str ||= language_data.get(exp, language)
           if str.nil?

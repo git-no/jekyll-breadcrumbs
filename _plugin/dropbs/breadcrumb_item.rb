@@ -13,5 +13,9 @@ module Drops
     def title
       @page.data["breadcrumb"] != nil ? @page.data["breadcrumb"] : @page.data["title"]
     end
+
+    def subset
+      @page.data["subset"]
+    end
   end
 end
