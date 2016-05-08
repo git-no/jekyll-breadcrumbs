@@ -6,7 +6,7 @@
 ## Overview
 * Smart and fast breadcrumbs for posts, pages and collections.  
 * Supports [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).   
-* Comes also with a code example for design and footer integration and with support of Twitter Bootstrap - has also no problem without Twitter Bootstrap (probably you just have to add some additional CSS code but you still can use the integrated HTML template).
+* Comes also with a code example for design and footer integration and with support of Twitter Bootstrap, but does also work without Twitter Bootstrap.
 
 ### Features
 
@@ -28,6 +28,7 @@
 1. Download the latest [release](https://github.com/git-no/jekyll-breadcrumbs/releases) and unpack the file.
 - Copy the content of *_plugin* folder to your Jekyll repository *_plugin* folder. If you do not use jekyll-language-plugin you can or should skip the lang-tag.rb file (translates breadcrumbs).
 - Copy *nav-breadcrumb.html* into your Jekyll repository *_include* folder.
+- Copy the *.css* into your css directory and link the file within your html or copy the code from our .css file into your css file.
 
 ### Configuration
 1. Include the nav-breadcrumb.html where every you want to place the breadcrumbs ``` {% include nav-breadcrumb.html %} ```.
@@ -45,7 +46,6 @@
   breadcrumb: Legal
   ---
   ```  
-* Integrate the .scss file or create your own CSS stylesheet to format the breadcrumbs.
 * Integrate your icon as SVG or as Image. This example works with SVG simular with the *_include/icon-github.html* and *_include/icon-github.svg*.
 Change the line in nav-breadcrumbs.html
 
@@ -61,9 +61,6 @@ For an image as root icon in breadcrumbs you probably have to update your css.
 
 ## Note
 * If you use [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) jekyll-breadcrumbs will translate each breadcrumb item if YAML *subset* in the page is set. If so this plugin will seek at first for *breadcrumb* within the subset of the language file, if breadcrumb is not found in the langauge file it will look for title within the subset.
-
-## Known Issues
-* CSS without Twitter Bootstrap missing (feel free to contribute and develop CSS)
 
 ## Contribution
 This Jekyll plugin is an extension of the [Simple Breadcrumbs in Jekyll 3](https://envygeeks.io/2015/12/06/super-simple-breadcrumbs-in-jekyll-3-0/) from the [envygeeks](https://github.com/envygeeks). Thank you very much [envygeeks](https://github.com/envygeeks) for all the effort and Jekyll development. We love Jekyll.
