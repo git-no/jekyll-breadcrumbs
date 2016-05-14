@@ -1,5 +1,5 @@
 # jekyll-breadcrumbs
-
+## Overview
 Smart and fast breadcrumbs for posts, pages and collections with SEO support optional translation support. Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks) with [Jekyll](https://jekyllrb.com) 3.x.
 
 ![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)  
@@ -20,7 +20,7 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support opt
 #### Requirements
 * Jekyll 3.x
 
-## Installation
+### Installation
 
 1. Download the latest [release](https://github.com/git-no/jekyll-breadcrumbs/releases) and unpack the file.
 
