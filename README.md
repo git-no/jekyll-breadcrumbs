@@ -2,11 +2,12 @@
 [Jekyll](https://jekyllrb.com) 3.x breadcrumbs for posts, pages, collections with optional support of i18n and Twitter Bootstrap.
 
 ![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)
+Example from [swissmation.com](https://www.swissmation.com/about/) (at the bottom of the page).
+
+See it live at [swissmation.com](https://www.swissmation.com/about/).
 
 ## Overview
-* Smart and fast breadcrumbs for posts, pages and collections.  
-* Supports [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin).   
-* Comes also with a code example for design and footer integration and with support of Twitter Bootstrap, but does also work without Twitter Bootstrap.
+Smart and fast breadcrumbs for posts, pages and collections with SEO support optional translation support. Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks).
 
 ### Features
 
@@ -16,8 +17,9 @@
 - Works with Pretty Permalinks.
 - Breadcrumb title can differ from page title.
 - Hides breadcrumbs at root page.
-- Supports translated breadcrumb if [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) is in use. jekyll-breadcrumbs works also without the jekyll-language-plugin.
-- Supports icon as root level breadcrumb item.
+- Supports translated breadcrumb caption if [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) is in use. jekyll-breadcrumbs works also without the jekyll-language-plugin.
+- Supports an icon as root level breadcrumb item.
+- Supports Twitter Bootstrap 4 (works also without Twitter Bootstrap).
 - Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks), does not require an additional Ruby GEM.
 
 #### Requirements
@@ -26,12 +28,28 @@
 ## Installation
 
 1. Download the latest [release](https://github.com/git-no/jekyll-breadcrumbs/releases) and unpack the file.
-- Copy the content of *_plugin* folder to your Jekyll repository *_plugin* folder. If you do not use jekyll-language-plugin you can or should skip the lang-tag.rb file (translates breadcrumbs).
-- Copy *nav-breadcrumb.html* into your Jekyll repository *_include* folder.
-- Copy the *.css* into your css directory and link the file within your html or copy the code from our .css file into your css file.
+
+- Copy the folders *_includes* and *_plugins* to your Jekyll repository.
+
+  If you do not use jekyll-language-plugin you can or should skip the lang-tag.rb file (it translates breadcrumbs and requires [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin)).
+- Copy the *breadcrumb-style.css* into your CSS directory and link the file within your HTML Header or copy the code into your existing CSS file.
 
 ### Configuration
-1. Include the nav-breadcrumb.html where every you want to place the breadcrumbs ``` {% include nav-breadcrumb.html %} ```.
+1. Include the nav-breadcrumb.html in your Jekyll code where every you want to place the breadcrumbs by:
+  ```
+  {% include nav-breadcrumb.html %}
+  ```
+
+* Integrate your icon as SVG into icon.svg or an image in icon.html. If you do not want an icon as home breadcrumb change the line in nav-breadcrumbs.html
+
+  ```
+  {% include icon.html class="breadcrumb-item" %}
+  ```
+  to
+  ```
+  <a class="breadcrumb-item" href="/">Home</a>
+  ```
+
 * Use YAML *title* or *breadcrumb* to define the title of breadcrumb items.
 
   ```
@@ -39,25 +57,15 @@
   title: Legal and Terms
   ---
   ```  
-  YAML *breadcrumb:* is optional and overrules YAML title, in case you want a different title in breadcrumb item as the page title.
+  or if you already use YAML title
   ```
   ---
   title: Legal and Terms
   breadcrumb: Legal
   ---
-  ```  
-* Integrate your icon as SVG or as Image. This example works with SVG simular with the *_include/icon-github.html* and *_include/icon-github.svg*.
-Change the line in nav-breadcrumbs.html
+  ```
+  YAML *breadcrumb:* is optional and overrules YAML title, in case you want a different title in breadcrumb item as the page title.
 
-  ```
-  <li class="breadcrumb-item">{% include icon.html %}</li>
-  ```
-  to your icon.html file name or change it to use an image to
-  ```
-  <li class="breadcrumb-item"><img src="/your-image-path" alt="icon"></li>
-  ```
-For an image as root icon in breadcrumbs you probably have to update your css.
-* Done. No entry in *_config.yml* required.
 
 ## Note
 * If you use [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) jekyll-breadcrumbs will translate each breadcrumb item if YAML *subset* in the page is set. If so this plugin will seek at first for *breadcrumb* within the subset of the language file, if breadcrumb is not found in the langauge file it will look for title within the subset.
