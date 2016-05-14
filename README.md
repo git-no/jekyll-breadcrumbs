@@ -27,10 +27,10 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support opt
 
 1. Download the latest [release](https://github.com/git-no/jekyll-breadcrumbs/releases) and unpack the file.
 
-- Copy the folders *_includes* and *_plugins* to your Jekyll repository.
+2. Copy the folders *_includes* and *_plugins* to your Jekyll repository.
 
   If you do not use jekyll-language-plugin you can or should skip the lang-tag.rb file (it translates breadcrumbs and requires [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin)).
-- Copy the *breadcrumb-style.css* into your CSS directory and link the file within your HTML Header or copy the code into your existing CSS file.
+3. Copy the *breadcrumb-style.css* into your CSS directory and link the file within your HTML Header or copy the code into your existing CSS file.
 
 ### Configuration
 1. Include the nav-breadcrumb.html in your Jekyll code where every you want to place the breadcrumbs by:
