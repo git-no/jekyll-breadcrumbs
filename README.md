@@ -1,10 +1,8 @@
 # jekyll-breadcrumbs
 [Jekyll](https://jekyllrb.com) 3.x breadcrumbs for posts, pages, collections with optional support of i18n and Twitter Bootstrap.
 
-![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)
-Example from [swissmation.com](https://www.swissmation.com/about/) (at the bottom of the page).
+![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)  
 
-See it live at [swissmation.com](https://www.swissmation.com/about/).
 
 ## Overview
 Smart and fast breadcrumbs for posts, pages and collections with SEO support optional translation support. Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks).
@@ -40,7 +38,7 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support opt
   {% include nav-breadcrumb.html %}
   ```
 
-* Integrate your icon as SVG into icon.svg or an image in icon.html. If you do not want an icon as home breadcrumb change the line in nav-breadcrumbs.html
+2. Integrate your icon as SVG into icon.svg or an image in icon.html. If you do not want an icon as home breadcrumb change the line in nav-breadcrumbs.html
 
   ```
   {% include icon.html class="breadcrumb-item" %}
@@ -50,7 +48,7 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support opt
   <a class="breadcrumb-item" href="/">Home</a>
   ```
 
-* Use YAML *title* or *breadcrumb* to define the title of breadcrumb items.
+3. Use YAML *title* or *breadcrumb* to define the title of breadcrumb items.
 
   ```
   ---
