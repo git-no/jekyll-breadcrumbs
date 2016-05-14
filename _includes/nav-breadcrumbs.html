@@ -5,15 +5,17 @@
     {% include icon.html class="breadcrumb-item" %}
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
     {% assign position = 0 %}
     {% for crumb in breadcrumbs %}
 
-      <!-- Skip for root -->
+      <!-- Skip if root -->
       {% if crumb.url == "/" %}
         {% continue %}
       {% endif %}
 
-      <!-- Skip for language directory -->
+      <!-- Skip if language directory -->
       {% if page.language %}
         {% assign langpath = crumb.url | remove: "/" %}
         {% if langpath == page.language %}
@@ -21,15 +23,26 @@
         {% endif %}
       {% endif %}
 
+      <!-- Get breadcrumb title, translates breadcrumb if YAML subset is set -->
+      {% assign subset = crumb.subset %}
+      {% if subset %}
+        {% capture caption %}{% tif subset %}{% endcapture %}
+      {% else %}
+        {% assign caption = crumb.title %}
+      {% endif %}
+
+      <!-- SEO data -->
       {% assign position = position  | plus: 1 %}
-      {% assign subset = crumb.subset %}{% if subset %}{% capture caption %}{% tif subset %}{% endcapture %}{% else %}{% assign caption = crumb.title %}{% endif %}
+
       <li class="breadcrumb-item{% if crumb.url == page.url %} active{% endif %}" property="itemListElement" typeof="ListItem">
         {% if crumb.url != page.url %}<a property="item" typeof="WebPage" href="{{ crumb.url | prepend:site.baseurl }}">{% endif %}
         <span property="name">{{ caption }}</span>
         {% if crumb.url != page.url %}</a>{% endif %}
         <meta property="position" content="{{ position }}" />
       </li>
+
     {% endfor %}
+    
     </ol>
 
   </nav>
