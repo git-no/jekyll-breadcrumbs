@@ -33,7 +33,7 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support, op
 ### Configuration
 1. Include the nav-breadcrumb.html in your Jekyll code where every you want to place the breadcrumbs by:
   ```
-  {% include nav-breadcrumb.html %}
+  {% include nav-breadcrumbs.html %}
   ```
 
 2. Integrate your icon as SVG into icon.svg or an image in icon.html. If you do not want an icon as home breadcrumb change the line in nav-breadcrumbs.html
