@@ -36,14 +36,14 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support, op
   {% include nav-breadcrumbs.html %}
   ```
 
-2. Integrate your icon as SVG into icon.svg or an image in icon.html. If you do not want an icon as home breadcrumb change the line in nav-breadcrumbs.html
+2. As default the root breadcrumb is visible as *Start*. If you want to integrate an image as root breadcrumb, e.g. as SVG, update the icon.svg with your SVG. If you want to integrate a other image type update icon.html. Also change the line of code in nav-breadcrumbs.html from
 
   ```
-  {% include icon.html class="breadcrumb-item" %}
+  <a class="breadcrumb-item" href={{ "/" | prepend: site.baseurl | prepend: site.url }}>Start</a>
   ```
   to
   ```
-  <a class="breadcrumb-item" href="/">Home</a>
+  {% include icon.html class="breadcrumb-item" %}
   ```
 
 3. Use YAML *title* or *breadcrumb* to define the title of breadcrumb items.
@@ -62,6 +62,21 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support, op
   ```
   YAML *breadcrumb:* is optional and overrules YAML title, in case you want a different title in breadcrumb item as the page title.
 
+4. If you use the [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) change the line of code in nav-breadcrumbs.html from
+
+  ```
+  {% assign caption = crumb.title %}
+  ```
+  to
+  ```
+  {% assign subset = crumb.subset %}
+  {% if subset %}
+    {% capture caption %}{% tif subset %}{% endcapture %}
+  {% else %}
+    {% assign caption = crumb.title %}
+  {% endif %}
+  ```
+  to get breadcrumb items translated.
 
 ## Note
 * If you use [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) jekyll-breadcrumbs will translate each breadcrumb item if YAML *subset* in the page is set. If so this plugin will seek at first for *breadcrumb* within the subset of the language file, if breadcrumb is not found in the langauge file it will look for title within the subset.
