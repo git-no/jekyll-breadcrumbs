@@ -65,6 +65,12 @@
   font-size: 1.3em;
 }
 
+.breadcrumbs a.breadcrumb-item:after {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  content: "/";
+}
+
 .breadcrumbs .icon:after {
   display: inline-block;
   padding-right: 0.5rem;
