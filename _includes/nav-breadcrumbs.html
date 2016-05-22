@@ -1,8 +1,8 @@
-{% capture url %}{{ page.url | remove: "/" | remove: page.language }}{% endcapture %}
+{% capture url %}{% if page.language%}{{ page.url | remove: "/" | remove: page.language }}{% else %}{{ page.url | remove: "/" }}{% endif %}{% endcapture %}
 {% if url.size > 0 %}
   <nav class="breadcrumbs hidden-sm-down">
 
-    {% include icon.html class="breadcrumb-item" %}
+    <a class="breadcrumb-item" href={{ "/" | prepend: site.baseurl | prepend: site.url }}>Start</a>
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
 
@@ -23,26 +23,21 @@
         {% endif %}
       {% endif %}
 
-      <!-- Get breadcrumb title, translates breadcrumb if YAML subset is set -->
-      {% assign subset = crumb.subset %}
-      {% if subset %}
-        {% capture caption %}{% tif subset %}{% endcapture %}
-      {% else %}
-        {% assign caption = crumb.title %}
-      {% endif %}
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      {% assign caption = crumb.title %}
 
       <!-- SEO data -->
       {% assign position = position  | plus: 1 %}
 
       <li class="breadcrumb-item{% if crumb.url == page.url %} active{% endif %}" property="itemListElement" typeof="ListItem">
-        {% if crumb.url != page.url %}<a property="item" typeof="WebPage" href="{{ crumb.url | prepend:site.baseurl }}">{% endif %}
+        {% if crumb.url != page.url %}<a property="item" typeof="WebPage" href="{{ crumb.url | prepend: site.baseurl | prepend: site.url }}">{% endif %}
         <span property="name">{{ caption }}</span>
         {% if crumb.url != page.url %}</a>{% endif %}
         <meta property="position" content="{{ position }}" />
       </li>
 
     {% endfor %}
-    
+
     </ol>
 
   </nav>
