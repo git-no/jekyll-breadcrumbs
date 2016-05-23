@@ -66,9 +66,11 @@
 }
 
 .breadcrumbs a.breadcrumb-item:after {
+  display: inline-block;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   content: "/";
+  text-decoration: none;
 }
 
 .breadcrumbs .icon:after {
