@@ -1,3 +1,5 @@
+# Support of [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) will be dropped at the next release cause of lack of compatible with recent Jekyll versions.
+
 # jekyll-breadcrumbs
 
 ![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)  
