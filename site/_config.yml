@@ -16,7 +16,7 @@
 title: Jekyll Breadcrumb Demo
 email:
 description: Jekyll Breadcrumb Test Site
-baseurl: "/base" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://localhost:4000" # the base hostname & protocol for your site
 twitter_username: swissmation
 github_username:  git-no
@@ -43,5 +43,5 @@ defaults:
 
 breadcrumbs:
   root:
-    hide: true  # show breadcrumbs on root/home page
+    hide: false  # show breadcrumbs on root/home page
     image: false # Show image or title text
