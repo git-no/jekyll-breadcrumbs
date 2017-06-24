@@ -65,7 +65,7 @@ breadcrumbs:
 
 
 ## Example
-If you are interessted how it look like, their is an example site included within folder *site*.
+If you are interessted how breadcrumbs look like, their is an [example site included within folder site](https://github.com/git-no/jekyll-breadcrumbs/tree/master/site).
 
 
 ## Contribution
