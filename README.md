@@ -1,53 +1,52 @@
-# Support of [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) will be dropped at the next release cause of lack of compatible with recent Jekyll versions.
-
 # jekyll-breadcrumbs
 
 ![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumb-example.png)  
 
+
+[![Gem Version](https://img.shields.io/gem/v/jekyll.svg)][ruby-gems]
+
+
 ### Overview
-Smart and fast breadcrumbs for posts, pages and collections with SEO support, optional translation support and more. Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks) with [Jekyll](https://jekyllrb.com) 3.x.
+Smart and fast breadcrumbs for posts, pages and collections with SEO support and more. Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks) with [Jekyll](https://jekyllrb.com) 3.x.
 
 ### Features
 
 - Works with posts, pages and collections.
+- Breadcrumb title can differ from page title.
 - HTML5 compliant and includes a HTML template for quick integration.
 - SEO improved, implements [Googles RDFA format](https://developers.google.com/structured-data/breadcrumbs).
 - Works with Pretty Permalinks.
-- Breadcrumb title can differ from page title.
-- Hides breadcrumbs at root page.
-- Supports translated breadcrumb caption if [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) is in use. jekyll-breadcrumbs works also without the jekyll-language-plugin.
+- Option to hides breadcrumbs on root page.
 - Supports an icon as root level breadcrumb item.
-- Supports Twitter Bootstrap 4 (works also without Twitter Bootstrap).
 - Works as [Jekyll Hook](https://jekyllrb.com/docs/plugins/#hooks), does not require an additional Ruby GEM.
+- Supports Twitter Bootstrap 4 (works also without Twitter Bootstrap).
 
 #### Requirements
 * Jekyll 3.x
 
+
 ### Installation
 
-1. Download the latest [release](https://github.com/git-no/jekyll-breadcrumbs/releases) and unpack the file.
+1. **Download** the latest [release](https://github.com/git-no/jekyll-breadcrumbs/releases) and unpack the file.
 
-2. Copy the folders *_includes* and *_plugins* to your Jekyll repository.
+2. **Copy** the content of folder **_plugins** into the same folder of your Jekyll repository. And copy at least the files nav-breadcrumbs.html, icon.html, icon.svg into your *_includes* folder.
 
-  If you do not use jekyll-language-plugin you can or should skip the lang-tag.rb file (it translates breadcrumbs and requires [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin)).
-3. Copy the *breadcrumb-style.css* into your CSS directory and link the file within your HTML Header or copy the code into your existing CSS file.
+3. **Include nav-breadcrumb.html** into your Jekyll code where ever you want to place the breadcrumbs, e.g. within your footer.html by insert this code:
+```liquid
+{% include nav-breadcrumbs.html %}
+```
 
-### Configuration
-1. Include the nav-breadcrumb.html in your Jekyll code where every you want to place the breadcrumbs by:
-  ```
-  {% include nav-breadcrumbs.html %}
-  ```
+4. **Setup Jekyll _config.yml**. Copy this YAML code to you *_config.yml*
+```yaml
+breadcrumbs:
+    root:
+      hide: false  # show breadcrumbs on root/home page
+      image: false # Show image or title text
+```
 
-2. As default the root breadcrumb is visible as *Start*. If you want to integrate an image as root breadcrumb, e.g. as SVG, update the icon.svg with your SVG. If you want to integrate a other image type update icon.html. Also change the line of code in nav-breadcrumbs.html from
-
-  ```
-  <a class="breadcrumb-item" href={{ "/" | prepend: site.baseurl | prepend: site.url }}>Start</a>
-  ```
-  to
-  ```
-  {% include icon.html class="breadcrumb-item" %}
-  ```
-
+##### Optional
+1. Transfer the example CSS code from nav-breadcrumbs.html into your css file. Modify the css as your like.
+2. If you want an icon as root sign in the breadcrumbs modify the file icon.svg.
 3. Use YAML *title* or *breadcrumb* to define the title of breadcrumb items.
 
   ```
@@ -55,7 +54,7 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support, op
   title: Legal and Terms
   ---
   ```  
-  or if you already use YAML title
+  or if you want a other text within the breadcrumb as the page title you can achieve this by adding the tag ```breadcrumb:``` in your YAML section of the page.
   ```
   ---
   title: Legal and Terms
@@ -64,28 +63,17 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support, op
   ```
   YAML *breadcrumb:* is optional and overrules YAML title, in case you want a different title in breadcrumb item as the page title.
 
-4. If you use the [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) change the line of code in nav-breadcrumbs.html from
 
-  ```
-  {% assign caption = crumb.title %}
-  ```
-  to
-  ```
-  {% assign subset = crumb.subset %}
-  {% if subset %}
-    {% capture caption %}{% tif subset %}{% endcapture %}
-  {% else %}
-    {% assign caption = crumb.title %}
-  {% endif %}
-  ```
-  to get breadcrumb items translated.
+## Example
+If you are interessted how it look like, their is an example site included within folder *site*.
 
-## Note
-* If you use [jekyll-language-plugin](https://github.com/vwochnik/jekyll-language-plugin) jekyll-breadcrumbs will translate each breadcrumb item if YAML *subset* in the page is set. If so this plugin will seek at first for *breadcrumb* within the subset of the language file, if breadcrumb is not found in the langauge file it will look for title within the subset.
 
 ## Contribution
 This Jekyll plugin is an extension of the [Simple Breadcrumbs in Jekyll 3](https://envygeeks.io/2015/12/06/super-simple-breadcrumbs-in-jekyll-3-0/) from the [envygeeks](https://github.com/envygeeks). Thank you very much [envygeeks](https://github.com/envygeeks) for sharing the code and thank you for all the Jekyll effort and development. We love Jekyll.
 
-## License
 
+## License
 See the [LICENSE](https://github.com/jekyll/jekyll/blob/master/LICENSE) file.
+
+
+[ruby-gems]: https://rubygems.org/gems/jekyll
