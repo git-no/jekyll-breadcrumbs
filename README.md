@@ -39,9 +39,9 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support and
 4. **Setup Jekyll _config.yml**. Copy this YAML code to you *_config.yml*
 ```yaml
 breadcrumbs:
-    root:
-      hide: false  # show breadcrumbs on root/home page
-      image: false # Show image or title text
+  root:
+    hide: false  # show breadcrumbs on root/home page
+    image: false # Show image or title text
 ```
 
 ##### Optional
