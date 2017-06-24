@@ -14,8 +14,9 @@ module Drops
       @page.data["breadcrumb"] != nil ? @page.data["breadcrumb"] : @page.data["title"]
     end
 
-    def subset
-      @page.data["subset"]
+    def namespace
+      @page.data["namespace"]
     end
+    
   end
 end
