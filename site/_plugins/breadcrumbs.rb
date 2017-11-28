@@ -3,9 +3,6 @@ require_relative 'drops/breadcrumb_item.rb'
 Jekyll::Hooks.register [:pages, :documents], :pre_render do |side, payload|  # documents are collections, and collections include also posts
   drop = Drops::BreadcrumbItem
 
-  # Test
-  puts side.url
-
   if side.url == "/"
     then payload["breadcrumbs"] = [
       drop.new(side, payload)

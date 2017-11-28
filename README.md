@@ -39,12 +39,12 @@ Smart and fast breadcrumbs for posts, pages and collections with SEO support and
 4. **Setup Jekyll _config.yml**. Copy this YAML code to you *_config.yml*
 ```yaml
 breadcrumbs:
-    root:
-      hide: false  # show breadcrumbs on root/home page
-      image: false # Show image or title text
+  root:
+    hide: false  # show breadcrumbs on root/home page
+    image: false # Show image or title text
 ```
 
-##### Optional
+#### Optional
 1. Transfer the example CSS code from nav-breadcrumbs.html into your css file. Modify the css as your like.
 2. If you want an icon as root sign in the breadcrumbs modify the file icon.svg.
 3. Use YAML *title* or *breadcrumb* to define the title of breadcrumb items.
@@ -65,8 +65,19 @@ breadcrumbs:
 
 
 ## Example
-If you are interessted how it look like, their is an example site included within folder *site*.
+If you are interessted how breadcrumbs look like, their is an [example site included within folder site](https://github.com/git-no/jekyll-breadcrumbs/tree/master/site).
 
+
+## For Developers
+You can use breadcrumbs in your own html code.  
+A breadcrumb is an array of crumb items within the actual page. Each crumb item represents a page/link and has two properties: url and title.  
+To get crumb items use liquid in your code:
+
+```html
+{% for crumb in breadcrumbs %}
+  <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+{% endfor %}
+```
 
 ## Contribution
 This Jekyll plugin is an extension of the [Simple Breadcrumbs in Jekyll 3](https://envygeeks.io/2015/12/06/super-simple-breadcrumbs-in-jekyll-3-0/) from the [envygeeks](https://github.com/envygeeks). Thank you very much [envygeeks](https://github.com/envygeeks) for sharing the code and thank you for all the Jekyll effort and development. We love Jekyll.
