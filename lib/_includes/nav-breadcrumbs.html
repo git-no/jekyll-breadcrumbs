@@ -1,26 +1,24 @@
 <nav class="breadcrumbs bootstrap hidden-sm-down" {% if (page.url == '/') and (site.breadcrumbs.root.hide) %}{{ 'style="display: none;"' }}{% endif %}>
   <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
-    {% assign position = 0 %}
-    {% for crumbitem in breadcrumbs %}
-      {% assign position = position  | plus: 1 %}
-
+   
+    {% for crumb in breadcrumbs %}
       {% if forloop.first and site.breadcrumbs.root.image %}
         {% include icon.html class="breadcrumb-item" color=include.color %}
         {% continue %}
       {% endif %}
-
+      
       {% if forloop.last %}
-        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">{{ crumbitem.title }}</span><meta property="position" content="{{ position }}" /></li>
+        <li class="breadcrumb-item" property="itemListElement" typeof="ListItem"><span property="name">{{ crumb.title }}</span><meta property="position" content="{{ crumb.position }}" /></li>
         {% continue %}
       {% endif %}
-
       <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-          <a property="item" typeof="WebPage" href="{{ crumbitem.url | prepend: site.baseurl }}"><span property="name">{{ crumbitem.title }}</span><meta property="position" content="{{ position }}" /></a>
+          <a property="item" typeof="WebPage" href="{{ crumb.url | prepend: site.baseurl }}"><span property="name">{{ crumb.title }}</span><meta property="position" content="{{ crumb.position }}" /></a>
       </li>
     {% endfor %}
 
   </ol>
 </nav>
+
 
 
 <!-- This is an example of CSS. Maybe you want to implement the css code into your main css file or modify it as you want -->

@@ -1,0 +1,11 @@
+.DS_Store
+/_site
+/.asset-cache
+/.bundle
+/.jekyll-cache
+/.jekyll-metadata
+/.sass-cache
+/Gemfile.lock
+/node_modules
+/tmp
+/vendor
