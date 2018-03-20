@@ -45,9 +45,7 @@ plugins:
 source: ./site
 destination: ./_site
 #plugins_dir: ./_site/plugins
-cache_dir: "./vendor/cache/_jekyll"
-sass:
-    sass_dir: .vendor/cache/_sass
+cache_dir: "./vendor/cache/jekyll"
 
 # Collections
 collections:
@@ -57,4 +55,4 @@ collections:
 breadcrumbs:
   root:
     hide: false  # show breadcrumbs on root/home page
-    image: true # Show image or title text
+    image: false # Show image or title text

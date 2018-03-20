@@ -14,7 +14,7 @@ module Jekyll
       clearAddressCache
       site.documents.each { |page| addAddressItem(page.url, page['crumbtitle'] || page['title'] || '') } # collection files including posts
       site.pages.each { |page| addAddressItem(page.url, page['crumbtitle'] || page['title'] || '') } # pages
-      site.posts.docs.each { |page| addAddressItem(page.url, page['crumbtitle'] || page['title'] || '') } # posts
+      site.posts.docs.each { |page| addAddressItem(page.url, page['crumbtitle'] || page['title'] || '') } # posts      
     end
 
     def self.addAddressItem(url, title)    
@@ -32,10 +32,10 @@ module Jekyll
     end
 
     def self.buildSideBreadcrumbs(side, payload)
-      return if side.url == @@siteAddress && root_hide
+      payload["breadcrumbs"] = []
+      return if side.url == @@siteAddress && root_hide === true
 
       drop = Jekyll::Drops::BreadcrumbItem
-      payload["breadcrumbs"] = []
       position = 0
 
       path = side.url.chomp("/").split(/(?=\/)/)
@@ -45,6 +45,7 @@ module Jekyll
          if item 
             position += 1
             item[:position] = position
+            item[:root_image] = root_image
             payload["breadcrumbs"] << drop.new(item)
          end
       end
@@ -54,8 +55,11 @@ module Jekyll
    def self.loadConfig(site)
       config = site.config["breadcrumbs"] || {"root" => {"hide" => false, "image" => false}} 
       root = config["root"]
-      @@config[:root_hide] = root[:hide] || false
-      @@config[:root_image] = root[:image] || false
+      @@config[:root_hide] = root["hide"] || false
+      @@config[:root_image] = root["image"] || false
+
+      @@siteAddress = site.config["baseurl"] || "/"
+      @@siteAddress = "/" if @@siteAddress.empty?
     end
 
     def self.root_hide

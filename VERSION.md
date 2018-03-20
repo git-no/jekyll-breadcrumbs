@@ -1,5 +1,10 @@
 # Version List
 
+## Next / Plan
+- Gihub whitelist
+- gem
+- yap
+
 ## v.3.0.0
 
 **SUMMARY**: Major performance improvement. Complete redesign. Beta Version.

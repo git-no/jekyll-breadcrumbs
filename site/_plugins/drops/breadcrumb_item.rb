@@ -18,6 +18,11 @@ module Jekyll
        def url
          @side[:url]
        end
+
+       def rootimage
+         @side[:root_image]
+       end
+      
      end
    end
  end
