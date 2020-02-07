@@ -1,5 +1,7 @@
 # jekyll-breadcrumbs
 
+> Attention: This repository / app is no longer supported. There will be no further development.
+
 ![Breadcrumb Example](https://github.com/git-no/jekyll-breadcrumbs/blob/master/breadcrumbs-example.png)  
 
 [![Jekyll Version](https://img.shields.io/gem/v/jekyll.svg)][ruby-gems]
